@@ -1,9 +1,128 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h2>Homepage</h2>
-  <p>Welcome to My Site, {% if user.is_authenticated %}{{ user.username }}{% else %}visitor{% endif %}!</p>
-  <p>
-    <strong>Total users registered: </strong> {{ count }}
-  </p>
+  
+  <header class="header_area">
+		<div class="main_menu">
+			<div class="container">
+				<nav class="navbar navbar-expand-lg navbar-light">
+					<div class="container">
+						
+                        <a class="navbar-brand logo_h" href="index.html"><img  src="img/logo3.png" width=70 height=70 alt=""></a>
+                        </div>
+                        </nav>
+                        </div>
+                        </div>
+                        </header>
+    <section class="home_banner_area">
+		<div class="banner_inner">
+			<div class="container">
+				<div class="banner_content">
+					<p class="upper_text">Every child deserves a</p>
+					<h2>safe , happy and enriching childhood</h2>
+				<!--	<p>
+						That don't lights. Blessed land spirit creature divide our made two 
+						itself upon you'll dominion waters man second good you they're divided upon winged were replenish night
+					</p> -->
+					<a class="primary_btn mr-20" href="{% url 'teacher-sign-in' %}">Login as Teacher</a>
+                    <a class="primary_btn mr-20" href="{% url 'school-sign-in' %}">Login as School</a>
+                    <br><br>
+                    <a class="primary_btn yellow_btn text-white" href="#">Login as KEF Employee</a>
+				</div>
+			</div>
+		</div>
+    </section>
+    <section class="causes_area">
+		<div class="container">
+			<div class="main_title">
+                <h4>Our Program</h4>
+				<h2>Holistic Child Development</h2>
+				<p>The School Readiness Program aims to create conducive learning environments at 
+                    school and at home by creating empowered parents, 
+                    equipped teachers and enriched classrooms to ensure holistic development of each child </p>
+			</div>
+			<div class="row">
+				<div class="col-lg-4 col-md-6">
+					<div class="single_causes">
+						<h4>Enriched Classrooms</h4>
+						<img src="img/children.jpg" width=300 height=200 alt="">
+						<p>
+                            We provide schools with comprehensive early childhood kit comprising fun,
+                             safe durable learning materials and age appropriate student workbooks.
+						</p>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="single_causes">
+						<h4>Equipped Teachers</h4>
+						<img src="img/teachers.jpg" width=300 height=200 alt="">
+						<p>
+							We have a year long teacher training and program  support model to ensure developmentally appropriate practices in classroom.
+						</p>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="single_causes">
+						<h4>Empowered Parents</h4>
+						<img src="img/parents.jpg" width=300 height=200 alt="">
+						<p>
+                            We work with parents to build awareness on helping children
+                             better in their home environment through targeted workshops and home activity sheets
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+    </section>
+    <section class="about_area section_gap_bottom">
+		<div class="container">
+			<div class="row">	
+				<div class="single_about row">
+					<div class="col-lg-6 col-md-12 text-center about_left">
+						<div class="about_thumb">
+							<img src="img/ECE.jpg" width=500 height=500 class="img-fluid" alt="">
+						</div>
+					</div>
+					<div class="col-lg-6 col-md-12 about_right">
+						<div class="about_content">
+							<h3>
+								Making every child school ready <br>
+									
+                            </h3>
+							<p>
+                                Early Childhood Education [ECE] is one of the largest unregulated spaces in Indian Education.
+                                 Despite research and efforts to improve quality, the gap between different economic sections of 
+                                society is widening each year in terms of the parent’s ability to provide quality ECE for their children.
+                            </p>
+                            <p>
+                                We, Key Education Foundation,as a non profit team try to make every child school ready by focussing on things like
+                               <br><b> Creativity and Curiosity</b>: A theme based approach in the curriculum to  encourage curiosity and build 
+                                aesthetic sense in children is used<br><b> Early Numeracy:</b> Materials and cognitive activities to promote pre-math 
+                                skills and number sense<br><b>Social and Emotional Development</b> : Circle time and storytelling to build essential 
+                                social and emotional skills in children<br> <b>Early Literacy:</b> We provide materials and activities that focus on listening, 
+                                 speaking, reading and writing skills<br> <b>Physical Development:</b> Materials and activities to ensure fine and gross motor development which is crucial in the early years
+							</p>
+						
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+    </section>
+
+   
+	<div class="cta-area section_gap overlay">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-7">
+					<h1>Want to join us??</h1>
+					
+					<a href="#" class="primary_btn yellow_btn rounded">join with us</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	
 {% endblock %}
