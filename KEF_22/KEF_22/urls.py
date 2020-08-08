@@ -14,8 +14,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+
+from KEF_22.KEF_App import views
 
 urlpatterns = [
+    path('', views.home, name='home'),
+    path('secret/', views.secret_page, name='secret'),
+    path('secret2/', views.SecretPage.as_view(), name='secret2'),
+    path('accounts/', include('django.contrib.auth.urls')),
     path('admin/', admin.site.urls),
 ]
