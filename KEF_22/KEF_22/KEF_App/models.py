@@ -28,6 +28,7 @@ class Assesment(models.Model):
     assesment_name = models.CharField(max_length=100, null=True)
     assesment_subject = models.CharField(max_length=100, null=True)
     assesment_date = models.DateField()
+    assesment_link = models.URLField(max_length=100, null=True) #new change
 
 
 class Training(models.Model):
@@ -48,3 +49,4 @@ class Training_Teacher(models.Model):
 
 class School_Teacher(models.Model):
     teacher_id = models.ForeignKey(Teacher, on_delete=models.CASCADE)
+    school_id = models.ForeignKey(School, on_delete=models.CASCADE) #new change
