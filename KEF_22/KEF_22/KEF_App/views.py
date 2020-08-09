@@ -33,22 +33,26 @@ def take_assesment(request):
 def upload(request):
     return render(request, 'file_upload.html')
     
+#new changes
 def cal_score():
-    if method.request == "POST":
-        path = request.POST.get('file_csv')
+    if request.method == "POST":
+        curr_test_id = request.POST.get('GiveTest')
+        path = request.POST.get('myfile')
+        print(path)
         l = csv.DictReader(open(path))
-        def add_scores(email, score, name):
+        print(l)
+        def add_scores(email, score):
             try:
-                obj1 = Teacher.objects.get(teacher_email=email)
-                obj3 = Assesment.objects.get(assesment_name=name)
-                obj2 = Assesment_Teacher.objects.get_or_create(test_id=obj3.id, teacher_id=obj1.id, test_score=score)
+                obj = Teacher.objects.get(teacher_email=email)
+
+                obj2 = Assesment_Teacher.objects.get_or_create(assesment_id=curr_test_id, teacher_id=obj.id, test_score=score)
                 obj2.save()
             except Assesment_Teacher.DoesNotExist:
                 pass
         for i in l:
             for j in i:
-                if j == 'Timestamp':
-                    date = i[j][:8]
+                # if j == 'Timestamp':
+                #     date = i[j][:8]
                 if j=='Email Address':
                     name = i[j]
                 if j == 'Score':
@@ -59,8 +63,9 @@ def cal_score():
                         else:
                             s+=i[j][k]
 
-                    add_scores(email, int(s[:-1]), name_test)
-    return render(request, 'assesment.html') #new changes
+                    add_scores(name, int(s[:-1]))
+    print('blahblah')
+    return render(request, 'assesment.html') 
 
 def visuals_teacher(request):
     l1 = Assesment_Teacher.objects.values_list('teacher_id','scores')
