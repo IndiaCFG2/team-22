@@ -1,0 +1,16 @@
+{% extends 'teacher-base.html' %}
+{% block title %} Teacher Assesment {% endblock %}
+
+{% block content %}
+<br><br><br><br><br><br>
+<ul>
+{% for obj in object %}
+<form action = '{{ obj.assesment_link }}'>
+    <li> <button type="submit" name="GiveTest" value= {{ obj.assesment_id }}> Give Assesment </button> {{ obj.assesment_name }} </li>
+</form>
+
+{% endfor %}
+</ul>
+
+
+{% endblock %}
