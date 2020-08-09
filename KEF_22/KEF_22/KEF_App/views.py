@@ -20,6 +20,15 @@ def secret_page(request):
 class SecretPage(LoginRequiredMixin, TemplateView):
     template_name = 'secret_page.html'
 
+#New changes
+def take_assesment(request):
+    obj = Assesment.objects.all()
+    # obj1 = Assesment_Teacher.objects.all()
+    context = {
+        'object' : obj
+    }
+    return render(request, 'assesment.html', context)
+    
 def cal_score():
     if method.request == "POST":
         path = request.POST.get('file_csv')
@@ -47,6 +56,7 @@ def cal_score():
                             s+=i[j][k]
 
                     add_scores(email, int(s[:-1]), name_test)
+    return render(request, 'assesment.html') #new changes
 
 def visuals_teacher(request):
     l1 = Assesment_Teacher.objects.values_list('teacher_id','scores')
