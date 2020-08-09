@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -10,7 +9,7 @@
      <title>{% block title %}{% endblock %}</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/carousel/">
-    <link rel="stylesheet" href="home_style.css">
+
     <!-- Bootstrap core CSS -->
 <link href="https://getbootstrap.com/docs/4.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
@@ -130,6 +129,12 @@ body {
       margin-top: 7rem;
     }
   }
+  .row-content{
+    margin:0px auto;
+    padding:50px 0px 50px 0px;
+    border-bottom:1px ridge;
+    min-height:400px;
+}
     </style>
     <!-- Custom styles for this template -->
    
@@ -157,8 +162,33 @@ body {
     </div>
   </nav>
 </header>
-{%block content%}{%endblock%}
-
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-      <script>window.jQuery || document.write('<script src="https://getbootstrap.com/docs/4.5/assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="https://getbootstrap.com/docs/4.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous"></script></body>
-</html>
+<div class="container">
+    <div class="row row-content align-items-center">
+        <div class="col-12 col-sm-4">
+            <h3>Overall Analysis</h3>
+        </div>
+        <div class="col-12 col-sm-8">
+            <img src="../static/plot_school.jpg" width=600 height=500>
+        </div>
+     </div>
+     
+ 
+ <div class="row row-content align-items-center">
+    <div class="col-12 col-sm-4">
+        <h3>Teacher1</h3>
+    </div>
+    <div class="col-12 col-sm-8">
+        <img src="../static/plot_1.jpg" width=600 height=500>
+    </div>
+ </div>
+ <div class="row row-content align-items-center">
+    <div class="col-12 col-sm-4">
+        <h3>Teacher2</h3>
+    </div>
+    <div class="col-12 col-sm-8">
+        <img src="../static/plot_2.jpg" width=600 height=500>
+    </div>
+ </div>
+ </div>
+ </body>
+ </html>
