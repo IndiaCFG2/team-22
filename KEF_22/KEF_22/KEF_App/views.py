@@ -29,6 +29,10 @@ def take_assesment(request):
     }
     return render(request, 'assesment.html', context)
     
+#new changes
+def upload(request):
+    return render(request, 'file_upload.html')
+    
 def cal_score():
     if method.request == "POST":
         path = request.POST.get('file_csv')
