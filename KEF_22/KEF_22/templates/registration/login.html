@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="row mt-5">
+  <div class="col-md-6 m-auto">
+    <div class="card card-body text-center">
+      <h1 class="text-center mb-3"><i class="fas fa-sign-in-alt"></i>Login</h1>
+      <form method="post" novalidate>
+        {% csrf_token %}
+          {{ form|crispy }}
+        <button type="submit" class="btn btn-primary text-center mt-3">Login</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

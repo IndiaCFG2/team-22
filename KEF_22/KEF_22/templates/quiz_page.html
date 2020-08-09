@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card card-body text-center mb-2">
+  <h2>Quiz</h2>
+  <p>Welcome to My Site, {% if user.is_authenticated %}{{ user.username }}{% else %}visitor{% endif %}!</p>
+
+</div>
+
+
+<div class="row mt-5">
+  <div class="col-md-6 m-auto">
+    {% for assesment in assesments %}
+     <div class="list-group mb-4">
+      <a href="{{ assesment.assesment_link }}" class="list-group-item list-group-item-action flex-column align-items-start active ">
+        <div class="text-center d-flex w-100 justify-content-between">
+          <h2 class="mb-1 text-center">{{ query.assesment_name }}</h2>
+        </div>
+        <p class="mb-1">{{ assesment.assesment_name }}</p>
+      </a>
+      <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+        <p class="mb-1 text-center">{{ assesment.assesment_subject }}</p>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+</div>{% endblock %}
