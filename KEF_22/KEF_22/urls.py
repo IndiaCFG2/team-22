@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings #new import
+from django.conf.urls.static import static #new import
 
 from KEF_22.KEF_App import views
 
@@ -24,4 +26,11 @@ urlpatterns = [
     path('secret2/', views.SecretPage.as_view(), name='secret2'),
     path('accounts/', include('django.contrib.auth.urls')),
     path('admin/', admin.site.urls),
+    path('teacher/assesment/', views.take_assesment, name='take_assesment'), #new changes
+    path('upload/', views.upload, name='upload'),
+    path('getscore/', views.cal_score, name='calscore'),
 ]
+
+#new changes
+if settings.DEBUG:
+    urlpatterns = urlpatterns + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
